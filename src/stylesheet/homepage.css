@@ -1,0 +1,72 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+.heroSection {
+  min-height: 100vh;
+}
+
+.heroTitle {
+  font-size: 6rem;
+}
+
+.counter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  /* font-size: 2rem; */
+  /* margin-bottom: rem; */
+  margin: 3rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.value {
+  text-align: center;
+  font-size: 8rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.value::after {
+  content: ":";
+  position: relative;
+  left: 3rem;
+}
+
+.seconds .value::after {
+  content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .value {
+    font-size: 6rem;
+  }
+
+  .value::after {
+    content: "  ";
+  }
+
+  .days .value::after,
+  .minutes .value::after {
+    content: ":";
+    left: 1rem;
+    font-size: 4rem;
+    top: -1rem;
+  }
+
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    /* font-size: 2rem; */
+    margin: 1rem;
+    font-weight: 300;
+    text-align: center;
+  }
+}
