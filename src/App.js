@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navs from "./layout/Nav.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import Homepage from "./layout/homepage.jsx";
+import CompleteProfile from "./layout/completeProfile.jsx";
 import { db, auth, provider } from "./config/firebaseconfig";
 import { selectUser, login, logout } from "./features/userSlice";
 import {
@@ -12,39 +13,34 @@ import {
   Redirect,
   useRouteMatch,
   useParams,
-  BrowserRouter
+  BrowserRouter,
 } from "react-router-dom";
 import "./stylesheet/Style.css";
 import Main from "./main.jsx";
 
 const App = () => {
   const [state, setState] = useState(false);
- const [authentication, setAuthState] = useState({
-   authenticated: false, //whether the user is allowed to access the protected routes
-   initialized: true, //if firebase is still being nitalized
- });
+  const [authentication, setAuthState] = useState({
+    authenticated: false, //whether the user is allowed to access the protected routes
+    initialized: true, //if firebase is still being nitalized
+  });
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      db.collection(authUser.displayName).add({
-        title: "note.title",
-        members: "akash",
-      });
-
-if (authUser) {
-  //the user has been logged in
-  setAuthState({
-    authenticated: true, //the user is now authenticated
-    initialized: false,
-  });
-} else {
-  //the user has been logged out
-  setAuthState({
-    authenticated: false, //the user is no longer authenticated
-    initialized: false,
-  });
-}
+      if (authUser) {
+        //the user has been logged in
+        setAuthState({
+          authenticated: true, //the user is now authenticated
+          initialized: false,
+        });
+      } else {
+        //the user has been logged out
+        setAuthState({
+          authenticated: false, //the user is no longer authenticated
+          initialized: false,
+        });
+      }
       console.log("user is ", authUser.displayName);
       if (authUser) {
         dispatch(
@@ -81,7 +77,8 @@ if (authUser) {
       {user ? (
         <>
           <Navs />
-          <Homepage />
+          <CompleteProfile />
+          {/* <Homepage /> */}
           {/* <Router>
             <Switch>
               <Route path="/main">
@@ -102,7 +99,7 @@ if (authUser) {
         </>
       )}
       {/* {user ? user.name : "Nothing"} */}
-       
+
       <PrivateRoute
         path={"/dashboard"}
         component={Main}

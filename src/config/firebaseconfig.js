@@ -9,35 +9,10 @@ const firebaseConfig = {
   measurementId: "G-E82SR3S213",
 };
 
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAtGWHH-hU6vzTCcaJ6SLG8f5IEvJXR1Qs",
-//   authDomain: "techxture-bdcc1.firebaseapp.com",
-//   projectId: "techxture-bdcc1",
-//   storageBucket: "techxture-bdcc1.appspot.com",
-//   messagingSenderId: "403167294720",
-//   appId: "1:403167294720:web:fdfc32635c6c0289956fe5",
-//   measurementId: "G-NP4Z5BWD02",
-// };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-// let akas = "a k a s h";
-// let akash = akas.split(" ");
-
-// db.collection("data").add({
-//   title: "note.title",
-//   members: akash,
-// });
-
-// Real Time Database
-// firebase.database().ref("user").push({
-//   title: "note.title",
-//   content: "note.content",
-// });
+const db = firebase.database();
 
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { db,auth, provider };
-// export default db;
+export { db, auth, provider };
