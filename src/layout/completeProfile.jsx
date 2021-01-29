@@ -5,11 +5,9 @@ import "../stylesheet/completeProfile.css";
 function CompleteProfile() {
   const [formData, setFormData] = useState({});
   React.useEffect(() => {
-    var Data = db
-      .ref("Teams/" + auth.currentUser.uid)
-      .on("value", (snapshot) => {
-        setFormData(snapshot.val());
-      });
+    db.ref("Teams/" + auth.currentUser.uid).on("value", (snapshot) => {
+      setFormData(snapshot.val());
+    });
   }, []);
   const updateInput = (e) => {
     setFormData({
