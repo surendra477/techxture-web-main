@@ -111,7 +111,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member1-contact"
                     name="Leader_contact"
-                    value={formData.Leader_contact || ""}
+                    value={formData ? formData.Leader_contact : ""}
                     onChange={updateInput}
                     required
                   />
@@ -154,7 +154,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member1-name"
                     name="member1_name"
-                    value={formData.member1_name || ""}
+                    value={formData ? formData.member1_name : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -172,7 +172,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member1-contact"
                     name="member1_contact"
-                    value={formData.member1_contact || ""}
+                    value={formData ? formData.member1_contact : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -190,7 +190,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member1-email"
                     name="member1_email"
-                    value={formData.member1_email || ""}
+                    value={formData ? formData.member1_email : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -214,7 +214,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member2-name"
                     name="member2_name"
-                    value={formData.member2_name || ""}
+                    value={formData ? formData.member2_name : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -232,7 +232,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member2-contact"
                     name="member2_contact"
-                    value={formData.member2_contact || ""}
+                    value={formData ? formData.member2_contact : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -250,7 +250,7 @@ function CompleteProfile() {
                     className="form-control"
                     id="member2-email"
                     name="member2_email"
-                    value={formData.member2_email || ""}
+                    value={formData ? formData.member2_email : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -277,7 +277,7 @@ function CompleteProfile() {
                   -name"
                     name="member3
                   _name"
-                    value={formData.member3_name || ""}
+                    value={formData ? formData.member3_name : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -298,7 +298,7 @@ function CompleteProfile() {
                   -contact"
                     name="member3
                   _contact"
-                    value={formData.member3_contact || ""}
+                    value={formData ? formData.member3_contact : ""}
                     onChange={updateInput}
                   />
                 </div>
@@ -319,7 +319,7 @@ function CompleteProfile() {
                   -email"
                     name="member3
                   _email"
-                    value={formData.member3_email || ""}
+                    value={formData ? formData.member3_email : ""}
                     onChange={updateInput}
                   />
                 </div>
