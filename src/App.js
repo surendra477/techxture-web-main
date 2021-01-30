@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navs from "./layout/Nav.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import Homepage from "./layout/homepage.jsx";
+import AdminDashboard from "./layout/adminDashboard.jsx";
 import CompleteProfile from "./layout/completeProfile.jsx";
 import { db, auth, provider } from "./config/firebaseconfig";
 import { selectUser, login, logout } from "./features/userSlice";
@@ -77,6 +78,7 @@ const App = () => {
       {user ? (
         <>
           <Navs />
+          <AdminDashboard />
           <CompleteProfile />
           {/* <Homepage /> */}
           {/* <Router>
