@@ -19,6 +19,8 @@
 
 // papersSchema = {
 //     paper_title:String,
-//     submittedBy : team leader id,  
-//     paper_file: 
+//     submittedBy : team leader id,
+//     paper_file:
 // }
+
+// City, State, college name every member.

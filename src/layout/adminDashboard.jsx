@@ -43,7 +43,7 @@ function AdminDashboard() {
         <h4 className="mt-5">Teams</h4>
         <div className="row no-gutters">
           <div className="col-12 table-responsive">
-            <table className="table table-striped">
+            <table className="table table-striped text-center">
               <thead>
                 <tr>
                   <th>Leader Name</th>
@@ -53,6 +53,15 @@ function AdminDashboard() {
                   <th>Mail Leader</th>
                 </tr>
               </thead>
+              <tbody>
+                <tr>
+                  <td>Akash</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>Yes/No</td>
+                  <td>Send Mail</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
