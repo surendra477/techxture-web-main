@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { db, auth } from "../config/firebaseconfig";
-// import sendmail from "../config/mail";
+import sendmail from "../config/mail";
 
 function CompleteProfile() {
   // sendmail();
@@ -31,8 +31,14 @@ function CompleteProfile() {
         ...formData,
         [e.target.name]: e.target.value,
       });
+      console.log(formData);
+    } else if (e.target.type === "text" || e.target.type === "email") {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+      console.log(formData);
     }
-    console.log(formData);
   };
 
   const handleSubmit = (event) => {
@@ -94,7 +100,7 @@ function CompleteProfile() {
                   <input
                     type="number"
                     className="form-control"
-                    id="member1-contact"
+                    id="leader-contact"
                     name="Leader_contact"
                     value={formData ? formData.Leader_contact : ""}
                     onChange={updateInput}

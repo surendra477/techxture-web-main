@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { db } from "../config/firebaseconfig";
+import { db, storage } from "../config/firebaseconfig";
 import "../stylesheet/adminDashboard.css";
 
 function AdminDashboard() {
@@ -7,9 +7,17 @@ function AdminDashboard() {
   const [teams, setTeams] = useState([]);
   React.useEffect(() => {
     db.ref("Teams").on("value", (snapshot) => {
+      let storageCount = storage
+        .ref("/")
+        .listAll()
+        .then((response) => {
+          setStats({
+            teamsCount: snapshot.numChildren(),
+            papers: response._delegate.items.length,
+          });
+        });
       // let data = snapshot.numChildren();
       setTeams(snapshot.val());
-      setStats({ teamsCount: snapshot.numChildren() });
     });
   }, []);
 
@@ -28,7 +36,7 @@ function AdminDashboard() {
             <div className="card">
               <div className="card-body">
                 <p className="text-muted mb-2">Total Papers Submitted</p>
-                <h2>40</h2>
+                <h2>{stats.papers}</h2>
               </div>
             </div>
             <div className="card">
@@ -43,24 +51,41 @@ function AdminDashboard() {
         <h4 className="mt-5">Teams</h4>
         <div className="row no-gutters">
           <div className="col-12 table-responsive">
-            <table className="table table-striped text-center">
+            <table
+              style={{ fontSize: "1.1rem" }}
+              className="table table-striped text-center"
+            >
               <thead>
                 <tr>
                   <th>Leader Name</th>
                   <th>Paper's Submitted</th>
-                  <th>Members</th>
                   <th>Confirm Submission</th>
-                  <th>Mail Leader</th>
+                  <th>Leader E-Mail</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Akash</td>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>Yes/No</td>
-                  <td>Send Mail</td>
-                </tr>
+                {Object.values(teams).map((team) => {
+                  return (
+                    <tr>
+                      <td>{team.leader_name}</td>
+                      <td
+                        className="text-truncate"
+                        style={{ maxWidth: "2rem" }}
+                      >
+                        <a href={team.paperURL}>Paper 1</a>
+                      </td>
+                      <td>
+                        <button className="btn btn-success px-4">Yes</button>
+                      </td>
+                      <td>
+                        {/* href={"mailto:" + team.leader_email} */}
+                        <a href="mailto:akashmaurya1430@gmail.com">
+                          {team.leader_email}
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

@@ -19,6 +19,7 @@ transporter.verify(function (error, success) {
 });
 
 const sendMail = (to) => {
+  console.log();
   var mail = {
     from: "akash.maurya18@siesgst.ac.in",
     to: "akash.maurya18@siesgst.ac.in",
