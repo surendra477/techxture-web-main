@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db, auth } from "../config/firebaseconfig";
+import { showToast } from "./toast";
 import sendmail from "../config/mail";
 
 function CompleteProfile() {
@@ -49,6 +50,7 @@ function CompleteProfile() {
       .child(userId)
       .set(formData)
       .then((data) => {
+        showToast("Profile Data Updated");
         console.log("Saved Data", data);
       })
       .catch((error) => {

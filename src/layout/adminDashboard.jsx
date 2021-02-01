@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { db, storage } from "../config/firebaseconfig";
 import "../stylesheet/adminDashboard.css";
+import { showToast } from "./toast";
 
 function AdminDashboard() {
   const [stats, setStats] = useState([]);
@@ -22,15 +23,23 @@ function AdminDashboard() {
   }, []);
 
   function confirmSubmission(id) {
-    db.ref("Teams/" + id).update({
-      confirmSubmission: true,
-    });
+    db.ref("Teams/" + id)
+      .update({
+        confirmSubmission: true,
+      })
+      .then((response) => {
+        showToast("Team Submission Confirmed");
+      });
   }
 
   function unConfirmSubmission(id) {
-    db.ref("Teams/" + id).update({
-      confirmSubmission: false,
-    });
+    db.ref("Teams/" + id)
+      .update({
+        confirmSubmission: false,
+      })
+      .then((response) => {
+        showToast("Team Submission Pending");
+      });
   }
 
   return (

@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 import "./stylesheet/Style.css";
 import Main from "./main.jsx";
+import Toast from "./layout/toast.jsx";
 
 const App = () => {
   const [state, setState] = useState(false);
@@ -75,6 +76,7 @@ const App = () => {
 
   return (
     <div>
+      <Toast />
       {user ? (
         <>
           <Navs />
