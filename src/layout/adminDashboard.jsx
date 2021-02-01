@@ -21,6 +21,18 @@ function AdminDashboard() {
     });
   }, []);
 
+  function confirmSubmission(id) {
+    db.ref("Teams/" + id).update({
+      confirmSubmission: true,
+    });
+  }
+
+  function unConfirmSubmission(id) {
+    db.ref("Teams/" + id).update({
+      confirmSubmission: false,
+    });
+  }
+
   return (
     <>
       <div className="px-lg-5 px-md-5 px-4 mt-5">
@@ -64,23 +76,37 @@ function AdminDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {Object.values(teams).map((team) => {
+                {Object.entries(teams).map((team) => {
                   return (
                     <tr>
-                      <td>{team.leader_name}</td>
+                      <td>{team[1].leader_name}</td>
                       <td
                         className="text-truncate"
                         style={{ maxWidth: "2rem" }}
                       >
-                        <a href={team.paperURL}>Paper 1</a>
+                        <a href={team[1].paperURL}>Paper 1</a>
                       </td>
                       <td>
-                        <button className="btn btn-success px-4">Yes</button>
+                        {team[1].confirmSubmission ? (
+                          <button
+                            className="btn btn-success px-4"
+                            onClick={() => unConfirmSubmission(team[0])}
+                          >
+                            Confirmed
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-outline-success px-4"
+                            onClick={() => confirmSubmission(team[0])}
+                          >
+                            Yes
+                          </button>
+                        )}
                       </td>
                       <td>
                         {/* href={"mailto:" + team.leader_email} */}
                         <a href="mailto:akashmaurya1430@gmail.com">
-                          {team.leader_email}
+                          {team[1].leader_email}
                         </a>
                       </td>
                     </tr>
