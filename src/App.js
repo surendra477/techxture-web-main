@@ -81,7 +81,7 @@ const App = () => {
         <>
           <Navs />
           <AdminDashboard />
-          <CompleteProfile />
+          {/* <CompleteProfile /> */}
           {/* <Homepage /> */}
           {/* <Router>
             <Switch>

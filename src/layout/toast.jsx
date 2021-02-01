@@ -16,7 +16,7 @@ function Toast() {
   return (
     <>
       <div
-        class="toast position-fixed top-0 end-0 p-1 text-white bg-primary border-0 p-2"
+        class="toast position-fixed top-0 end-0 p-1 text-white bg-secondary border-0 px-3 py-2"
         role="alert"
         aria-live="assertive"
         aria-atomic="true"

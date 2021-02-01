@@ -38,7 +38,7 @@ function CompleteProfile() {
         ...formData,
         [e.target.name]: e.target.value,
       });
-      console.log(formData);
+      // console.log(formData);
     }
   };
 
@@ -51,7 +51,7 @@ function CompleteProfile() {
       .set(formData)
       .then((data) => {
         showToast("Profile Data Updated");
-        console.log("Saved Data", data);
+        // console.log("Saved Data", data);
       })
       .catch((error) => {
         console.log("Storing Error", error);
