@@ -1,4 +1,4 @@
-let nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -6,7 +6,7 @@ let transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "akash.maurya18@siesgst.ac.in",
-    pass: "Akash@3030",
+    pass: "",
   },
 });
 
@@ -35,4 +35,4 @@ const sendMail = (to) => {
   });
 };
 
-module.exports = sendMail;
+export default sendMail;

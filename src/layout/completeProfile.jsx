@@ -64,9 +64,10 @@ function CompleteProfile() {
       <div className="p-lg-5 p-md-5 p-3">
         <h4 className="">Team Profile</h4>
         <form
-          className="row g-3 needs-validation mt-lg-5 mt-md-5 mt-4"
+          className="row g-3 needs-validation  mt-lg-5 mt-md-5 mt-4"
           id="completeProfileForm"
           onSubmit={handleSubmit}
+          novalidate
         >
           <div className="row no-gutters w-100">
             {/* Team Leader */}
@@ -82,6 +83,7 @@ function CompleteProfile() {
                     Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="leader-name"
@@ -100,6 +102,7 @@ function CompleteProfile() {
                     Contact
                   </label>
                   <input
+                    autoComplete="nope"
                     type="number"
                     className="form-control"
                     id="leader-contact"
@@ -119,6 +122,7 @@ function CompleteProfile() {
                     Email
                   </label>
                   <input
+                    autoComplete="nope"
                     type="email"
                     className="form-control"
                     id="leader-email"
@@ -137,6 +141,7 @@ function CompleteProfile() {
                     College Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="team_leader_college_name"
@@ -156,6 +161,7 @@ function CompleteProfile() {
                     City
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="team_leader_city"
@@ -175,6 +181,7 @@ function CompleteProfile() {
                     State
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="team_leader_state"
@@ -200,6 +207,7 @@ function CompleteProfile() {
                     Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member1-name"
@@ -218,6 +226,7 @@ function CompleteProfile() {
                     Contact
                   </label>
                   <input
+                    autoComplete="nope"
                     type="number"
                     className="form-control"
                     id="member1-contact"
@@ -236,6 +245,7 @@ function CompleteProfile() {
                     Email
                   </label>
                   <input
+                    autoComplete="nope"
                     type="email"
                     className="form-control"
                     id="member1-email"
@@ -254,6 +264,7 @@ function CompleteProfile() {
                     College Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member1_college_name"
@@ -272,6 +283,7 @@ function CompleteProfile() {
                     City
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member1_city"
@@ -290,6 +302,7 @@ function CompleteProfile() {
                     State
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member1_state"
@@ -314,6 +327,7 @@ function CompleteProfile() {
                     Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member2-name"
@@ -332,6 +346,7 @@ function CompleteProfile() {
                     Contact
                   </label>
                   <input
+                    autoComplete="nope"
                     type="number"
                     className="form-control"
                     id="member2-contact"
@@ -350,6 +365,7 @@ function CompleteProfile() {
                     Email
                   </label>
                   <input
+                    autoComplete="nope"
                     type="email"
                     className="form-control"
                     id="member2-email"
@@ -368,6 +384,7 @@ function CompleteProfile() {
                     College Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member2_college_name"
@@ -386,6 +403,7 @@ function CompleteProfile() {
                     City
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member2_city"
@@ -404,6 +422,7 @@ function CompleteProfile() {
                     State
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member2_state"
@@ -429,6 +448,7 @@ function CompleteProfile() {
                     Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member3
@@ -450,6 +470,7 @@ function CompleteProfile() {
                     Contact
                   </label>
                   <input
+                    autoComplete="nope"
                     type="number"
                     className="form-control"
                     id="member3
@@ -471,6 +492,7 @@ function CompleteProfile() {
                     Email
                   </label>
                   <input
+                    autoComplete="nope"
                     type="email"
                     className="form-control"
                     id="member3
@@ -491,6 +513,7 @@ function CompleteProfile() {
                     College Name
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member3_college_name"
@@ -509,6 +532,7 @@ function CompleteProfile() {
                     City
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member3_city"
@@ -527,6 +551,7 @@ function CompleteProfile() {
                     State
                   </label>
                   <input
+                    autoComplete="nope"
                     type="text"
                     className="form-control"
                     id="member3_state"

@@ -93,7 +93,20 @@ function AdminDashboard() {
                         className="text-truncate"
                         style={{ maxWidth: "2rem" }}
                       >
-                        <a href={team[1].paperURL}>Paper 1</a>
+                        {Object.entries(team[1].papers).map((paper) => {
+                          // console.log("paper", paper);
+                          return paper[1].url ? (
+                            <>
+                              <p>
+                                <a target="_blank" href={paper[1].url}>
+                                  {paper[1].name}
+                                </a>
+                              </p>
+                            </>
+                          ) : (
+                            <>No Paper's Submitted Yet</>
+                          );
+                        })}
                       </td>
                       <td>
                         {team[1].confirmSubmission ? (
